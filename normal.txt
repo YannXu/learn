@@ -1,0 +1,11 @@
+$ mkdir learngit
+$ cd learngit
+$ pwd
+ /Users/michael/learngit   %%pwd用于显示仓库目录
+
+$ git init
+
+$ git add normal.txt      %%第一步，把文件放到仓库 
+
+$ git commit -m "learn git"  %%第二步，提交文件
+--------------------------------------------------------建立仓库，上传文件
