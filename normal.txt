@@ -18,12 +18,19 @@ $git reset --hard id %%回退到具体的某一个版本
 $git reflog %%查询所有命令
 $git diff HEAD -- readme.txt  %%查看工作区和版本库里面最新版本的区别
 $ git checkout -- readme.txt
-  %%一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+  %%一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改或者删除，回到和版本库一模一样的状态；
   %%一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
   
   %%当改乱了工作区某个文件且添加到了暂存区时，想丢弃修改
   %%第一步用命令git reset HEAD <file>，修改从暂存区回退到工作区
   %%再使用git checkout -- readme.txt
 
+$ git rm test.txt %%删除工作区
+
+$ git rm test.txt
+$ git commit -m "remove test.txt" %%两条命令彻底删除库里的文件
+
+$ git remote add origin git@github.com:michaelliao/learngit.git  %%关联远程库
+$ git push -u origin master  %%将本地所有内容推送到远程库
 
 
