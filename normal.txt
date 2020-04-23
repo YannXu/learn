@@ -3,11 +3,27 @@ $ cd learngit
 $ pwd
  /Users/michael/learngit   %%pwd用于显示仓库目录
 
-$ git init
+$git init
 
-$ git add normal.txt      %%第一步，把文件放到仓库 
+$git add normal.txt   %%第一步，把文件添加到暂存区，未添加到暂存区的为“Untracked"
 
-$ git commit -m "learn git"  %%第二步，提交文件
---------------------------------------------------------建立仓库，上传文件
-git status  %% 查询状态
-git diff %%哪里被修改
+$git commit -m "learn git"  %%第二步，一次性提交暂存区所有文件到当前分支
+-------------------------------------建立仓库，上传文件
+$git status  %% 查询状态
+$git diff %%哪里被修改
+
+$git log %%令显示从最近到最远的提交日志，我们可以看到3次提交
+$git reset --hard HEAD^ %%回退到上一个版本
+$git reset --hard id %%回退到具体的某一个版本
+$git reflog %%查询所有命令
+$git diff HEAD -- readme.txt  %%查看工作区和版本库里面最新版本的区别
+$ git checkout -- readme.txt
+  %%一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+  %%一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+  
+  %%当改乱了工作区某个文件且添加到了暂存区时，想丢弃修改
+  %%第一步用命令git reset HEAD <file>，修改从暂存区回退到工作区
+  %%再使用git checkout -- readme.txt
+
+
+
